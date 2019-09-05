@@ -29,6 +29,16 @@ public class Vehiculo {
 	private String linea;
 	private String color;
 	
+	/*public Vehiculo(String marca) {
+		this.marca= marca;
+	}
+	
+	public Vehiculo(short modeloAuto) {
+		this.modeloAuto=modeloAuto;
+	}
+	*/
+	
+	
 	@Column(name="fecha_creacion_registro")
 	@Temporal( TemporalType.DATE)//parceo de java a sql
 	private Date fechaCreacionRegistro;
