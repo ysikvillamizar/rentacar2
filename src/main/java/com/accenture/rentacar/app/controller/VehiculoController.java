@@ -32,9 +32,10 @@ public class VehiculoController {
 	}
 	
 	@PostMapping("/vehiculos")
-	public Vehiculo guardar (@RequestBody Vehiculo vehiculo) {//lo recibo en el body del request
-		return vehiculoService.guardar(vehiculo);
+	public Vehiculo guardar (@RequestBody Vehiculo[] vehiculo) {//lo recibo en el body del request
+		return vehiculoService.guardar(vehiculo.length);
 	}
+	
 	
 	@SuppressWarnings("unused")//para quitr el warning cuando tengo varianles sin usarla
 	@PostMapping("/actualizar")
