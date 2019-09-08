@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.accenture.rentacar.app.entity.Cliente;
+
 import com.accenture.rentacar.app.service.IClienteService;
 
 @RestController
@@ -34,6 +35,11 @@ public class ClienteController {
 	@PostMapping("/cliente")
 	public Cliente guardar (@RequestBody Cliente cliente) {//lo recibo en el body del request
 		return clienteService.guardar(cliente);
+	}
+	
+	@PostMapping("/clientes")
+	public List<Cliente> guardar (@RequestBody Cliente[] clientes) {//lo recibo en el body del request
+		return  clienteService.guardar(clientes);
 	}
 	
 	@SuppressWarnings("unused")//para quitr el warning cuando tengo varianles sin usarla

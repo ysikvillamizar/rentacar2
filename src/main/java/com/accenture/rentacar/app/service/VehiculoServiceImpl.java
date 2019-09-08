@@ -1,5 +1,6 @@
 package com.accenture.rentacar.app.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,13 @@ public class VehiculoServiceImpl implements IVehiculoService {
 	private IVehiculoDao vehiculoDao;
 
 	@Override
-	public Vehiculo guardar(Vehiculo vehiculo) {
-		// TODO Auto-generated method stub
+	public Vehiculo guardar(Vehiculo vehiculo) {		
 		return vehiculoDao.save(vehiculo);
+	}
+	
+	@Override
+	public List<Vehiculo> guardar(Vehiculo[] vehiculos) {		
+		return (List<Vehiculo>) vehiculoDao.saveAll(Arrays.asList(vehiculos));
 	}
 
 	@Override

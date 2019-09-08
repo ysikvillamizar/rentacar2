@@ -31,28 +31,27 @@ public class VehiculoController {
 		return vehiculoService.buscarVehiculoPorId(id);
 	}
 	
-	@PostMapping("/vehiculos")
-	public Vehiculo guardar (@RequestBody Vehiculo[] vehiculo) {//lo recibo en el body del request
-		return vehiculoService.guardar(vehiculo.length);
+	@PostMapping("/vehiculo")
+	public Vehiculo guardar (@RequestBody Vehiculo vehiculo) {//lo recibo en el body del request
+		return  vehiculoService.guardar(vehiculo);
 	}
 	
+	@PostMapping("/vehiculos")
+	public List<Vehiculo> guardar (@RequestBody Vehiculo[] vehiculos) {//lo recibo en el body del request
+		return  vehiculoService.guardar(vehiculos);
+	}
 	
-	@SuppressWarnings("unused")//para quitr el warning cuando tengo varianles sin usarla
 	@PostMapping("/actualizar")
 	public Vehiculo actualizar(@RequestBody Vehiculo vehiculo) {
-		//Vehiculo vehiNuevo= new Vehiculo("TOYOTA");
-		//Vehiculo vehiNuevoDos= new Vehiculo((short)2021);
-		Vehiculo vehiAActualizar= new Vehiculo();
+
 		Vehiculo vehiActual= vehiculoService.buscarVehiculoPorId(vehiculo.getId());
-		vehiAActualizar.setId(vehiculo.getId());
-		vehiAActualizar.setColor(vehiculo.getColor());
-		vehiAActualizar.setLinea(vehiculo.getLinea());
-		vehiAActualizar.setMarca(vehiculo.getMarca());
-		vehiAActualizar.setModelo(vehiculo.getModeloAuto());
-		vehiAActualizar.setPlaca(vehiculo.getPlaca());
-		
-		
-		return vehiculoService.guardar(vehiAActualizar) ;
+		vehiActual.setColor(vehiculo.getColor());
+		vehiActual.setLinea(vehiculo.getLinea());
+		vehiActual.setMarca(vehiculo.getMarca());
+		vehiActual.setModelo(vehiculo.getModeloAuto());
+		vehiActual.setPlaca(vehiculo.getPlaca());
+				
+		return vehiculoService.guardar(vehiActual) ;
 	}
 	
 	@DeleteMapping("/vehiculos/{id}")
