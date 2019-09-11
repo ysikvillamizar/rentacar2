@@ -25,7 +25,28 @@ public class VehiculoServiceImpl implements IVehiculoService {
 	public List<Vehiculo> guardar(Vehiculo[] vehiculos) {		
 		return (List<Vehiculo>) vehiculoDao.saveAll(Arrays.asList(vehiculos));
 	}
+	
 
+	/*
+	 @Override
+	 public List<Vehiculo> guardarVarios (Vehiculo[] vehiculos){
+	 
+	 List<Vehiculo> retorno =new ArrayList<Vehiculo>();
+	 
+	 for (Vehiculo vehiculo : vehiculos){
+	 	retorno.add(vehiculoDao.save(vehiculo));
+	 	}
+	 return retorno;
+	 
+	 
+	 
+	 for (int i=0; i<vehiculos.length; i++){
+	 retorno.add(vehiculoDao.save(vehiculos[i]);
+	 	}
+	 }
+	 
+	 */
+	
 	@Override
 	public void borrar(Long id) {
 		// TODO Auto-generated method stub

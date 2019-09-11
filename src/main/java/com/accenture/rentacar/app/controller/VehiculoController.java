@@ -41,6 +41,13 @@ public class VehiculoController {
 		return  vehiculoService.guardar(vehiculos);
 	}
 	
+	/*
+	 @PostMApping("varios-vehiculos")
+	 public List<Vehiculo> guardar (@RequestBody Vehiculo[] vehiculos){
+	 return vehiculoService.guardarVarios(vehiculos);
+	 }
+	 */
+	
 	@PostMapping("/actualizar")
 	public Vehiculo actualizar(@RequestBody Vehiculo vehiculo) {
 

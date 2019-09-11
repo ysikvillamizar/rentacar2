@@ -10,6 +10,7 @@ public interface IVehiculoService {
 	public Vehiculo guardar (Vehiculo vehiculo);
 
 	public List<Vehiculo> guardar (Vehiculo[] vehiculos);
+	//public List<Vehiculo> guardarVarios(Vehiculo[] vehiculos)
 	
 	public void borrar (Long id);
 	
