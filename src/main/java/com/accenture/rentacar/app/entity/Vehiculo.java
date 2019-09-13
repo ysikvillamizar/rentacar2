@@ -17,6 +17,7 @@ import javax.persistence.TemporalType;
 public class Vehiculo {
 
 	
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)//generar
 	private Long id;
